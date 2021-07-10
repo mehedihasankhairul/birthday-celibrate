@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Satisfy", cursive;
+}
+
+body {
+    overflow: hidden;
+    background: #24263b;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #24263b;
+}
+
+section .box {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+}
+
+section .box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.404), transparent);
+    opacity: 0.1;
+    transform: rotate(45deg);
+    transform-origin: left;
+}
+
+section .box .circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ec0707, #d72a2f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+section .box .circle::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: -o-linear-gradient(315deg, #fff, #e4e3e8);
+    border-radius: 50%;
+}
+
+section .box .circle h2 {
+    position: absolute;
+    z-index: 2;
+    font-size: 4rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+section i {
+    position: absolute;
+    background: rgb(255, 196, 0);
+    border-radius: 100%;
+    animation: animate linear infinite;
+}
+
+section i:nth-child(even){
+    background: transparent ;
+    border: 2 px solid red;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    10% {
+
+        opacity: 1;
+    }
+    90% {
+
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-2000%);
+        opacity: 1;
+    }
+  
+}
