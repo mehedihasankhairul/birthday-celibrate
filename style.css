@@ -24,6 +24,7 @@ section .box {
     position: absolute;
     width: 450px;
     height: 450px;
+    scale: fade;
 }
 
 section .box::before {
@@ -72,9 +73,10 @@ section .box .circle h2 {
 
 section i {
     position: absolute;
-    background: rgb(255, 196, 0);
+    background: rgb(255, 0, 55);
     border-radius: 100%;
     animation: animate linear infinite;
+    scale: fade(5);
 }
 
 section i:nth-child(even) {
@@ -99,6 +101,51 @@ section i:nth-child(even) {
     }
 }
 
+@-webkit-keyframes fadeOut {
+    0% {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(2);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    100% {
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+@keyframes fadeOut {
+    0% {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(2);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    100% {
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+
 @media screen and (max-width: 767px) {
     section {
         width: auto;
@@ -111,7 +158,6 @@ section i:nth-child(even) {
         margin-left: 10%;
         width: 320px;
         height: 320px;
-        
     }
 }
 @media screen and (max-width: 320px) {
