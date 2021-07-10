@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Satisfy&display=swap");
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -77,8 +77,8 @@ section i {
     animation: animate linear infinite;
 }
 
-section i:nth-child(even){
-    background: transparent ;
+section i:nth-child(even) {
+    background: transparent;
     border: 2 px solid red;
 }
 
@@ -88,16 +88,37 @@ section i:nth-child(even){
         opacity: 0;
     }
     10% {
-
         opacity: 1;
     }
     90% {
-
         opacity: 1;
     }
     100% {
         transform: translateY(-2000%);
         opacity: 1;
     }
-  
+}
+
+@media screen and (max-width: 767px) {
+    section {
+        width: auto;
+    }
+}
+@media screen and (max-width: 375px) {
+    section .box .circle {
+        justify-content: center;
+        align-items: center;
+        margin-left: 10%;
+        width: 320px;
+        height: 320px;
+        
+    }
+}
+@media screen and (max-width: 320px) {
+    section .box .circle {
+        justify-content: center;
+        margin-left: 15%;
+        height: 49vh;
+        width: 49vh;
+    }
 }
